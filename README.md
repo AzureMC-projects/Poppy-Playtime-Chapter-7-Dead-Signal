@@ -159,17 +159,17 @@ Controls will be finalized during Act 1 development.
 - [x] Build/design documentation
 
 ### Milestone 1 — Act 1 / Vertical Slice
-- [ ] First factory environment
-- [ ] First-person controller
-- [ ] Flashlight
-- [ ] Doors and physical interactions
-- [ ] GrabPack prototype
-- [ ] Power-routing puzzle
-- [ ] Project: Echo story sequence
-- [ ] Morrow introduction
-- [ ] First chase
+- [x] First factory environment (prototype)
+- [x] First-person controller (prototype)
+- [x] Flashlight
+- [x] Doors and physical interactions (prototype)
+- [x] GrabPack prototype
+- [x] Power-routing puzzle
+- [x] Project: Echo story sequence
+- [x] Morrow introduction
+- [x] First chase
 - [ ] Checkpoint/save flow
-- [ ] Act 1 playable from start to finish
+- [x] Act 1 playable from start to finish (prototype)
 
 ### Milestone 2 — Production Systems
 - [ ] Expanded Morrow AI
