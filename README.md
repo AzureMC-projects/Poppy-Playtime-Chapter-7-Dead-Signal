@@ -1,71 +1,116 @@
 # Poppy Playtime: Chapter 7 — Dead Signal
 
-> **A fan-made, non-commercial horror game inspired by the Poppy Playtime universe.**
+> **An original, non-commercial fan-made horror game inspired by the Poppy Playtime universe.**
 
-**Status:** Pre-production / playable prototype  
-**Engine:** jMonkeyEngine 3.9  
-**Language:** Java 25  
-**Distribution target:** itch.io
+<p align="center">
+  <strong>DEAD SIGNAL</strong><br>
+  <em>Sector 07 is listening.</em>
+</p>
 
-## About
+## Project status
 
-**Dead Signal** is an original fan-game concept set in an abandoned Playtime Co. facility.
+| Area | Status |
+|---|---|
+| Engine | jMonkeyEngine 3.9.0-stable |
+| Runtime | Java 25 |
+| Build | Gradle |
+| Current phase | Pre-production / playable prototype |
+| Target release | itch.io |
+| Platform target | Windows + Linux |
 
-A mysterious transmission has brought one forgotten section of the factory back online. Follow the signal into **Sector 07 — Signal Processing**, solve environmental puzzles, uncover the story behind **Project: Echo**, and survive whatever has been listening.
+jMonkeyEngine 3.9.0-stable is a production-ready engine release, and the current jME 3.9 SDK is Java 25-ready. citeturn0search5turn0search6
 
-This repository contains the game source and development builds.
+## The game
 
-## Current prototype
+A forgotten transmission has brought **Sector 07 — Signal Processing** back online.
 
-The first milestone focuses on a professional foundation:
+You enter the abandoned facility looking for the source. Instead, you find evidence of **Project: Echo**, a Playtime Co. experiment built around preserving memories and personality data.
 
-- Java 25 Gradle project
-- jMonkeyEngine 3.9
-- Main menu and options entry point
-- First-person prototype scene
-- Basic movement and mouse-look
-- Flashlight-ready architecture
-- Clean separation between menu, gameplay, and systems
-- Build configuration suitable for future itch.io releases
+Something else is receiving the signal.
 
-## How to download and play
+**Morrow** was designed as a child's nighttime companion. Now corrupted, it has developed one simple belief:
 
-### Recommended: itch.io
+> Nobody should be alone.
 
-**The public release page will be added here when the first playable build is released.**
+Explore. Restore power. Follow the signal. Do not let it find you.
 
-1. Download the latest release for your operating system from the itch.io page.
-2. Extract the downloaded ZIP.
-3. Run the game executable.
-4. If your operating system asks for permission, allow the game to launch.
+## Design goals
 
-Do **not** download development source code if you only want to play the game.
+Dead Signal is being built around:
 
-### Developers
+- First-person exploration
+- Physical environmental puzzles
+- GrabPack-style interaction mechanics with original implementations
+- Industrial machinery and power systems
+- Slow-burn psychological horror
+- Stalking and chase encounters
+- Environmental storytelling
+- Strong audio and lighting direction
+- Checkpoints and reliable save progression
+- A polished, itch.io-ready player experience
 
-You need **JDK 25** installed.
+The project takes inspiration from the pacing, puzzle language, presentation, and menu conventions of modern mascot-horror games while using original code, environments, characters, story beats, audio, and other assets.
 
-Clone the repository and run:
+## Act 1 — The Signal
+
+Act 1 is the first complete gameplay target.
+
+**Planned sequence:**
+
+1. Arrival at Sector 07.
+2. Establish the abandoned signal-processing facility.
+3. Introduce movement, camera, and flashlight.
+4. Discover the first interactive power system.
+5. Introduce the GrabPack prototype.
+6. Solve the first power-routing puzzle.
+7. Discover evidence connected to Project: Echo.
+8. Trigger the first unmistakable Morrow encounter.
+9. Escape into the deeper facility.
+10. End on a strong story cliffhanger.
+
+Act 1 is not considered complete until these pieces work together as one continuous playable sequence.
+
+See [docs/GAME_DESIGN.md](docs/GAME_DESIGN.md) for the design target.
+
+## Play the game
+
+### Public releases
+
+The first public itch.io build will be linked here when it is ready.
+
+**Recommended player workflow:**
+
+1. Download the latest platform build.
+2. Extract the ZIP.
+3. Launch the included game executable.
+4. Play using the controls shown in-game/readme.
+5. Report bugs through GitHub or the itch.io community page.
+
+**Do not download the source repository if you only want to play the game.**
+
+### Development build
+
+Requires **JDK 25**.
+
+Linux/macOS:
 
 ```bash
 ./gradlew run
 ```
 
-On Windows:
+Windows:
 
 ```powershell
 gradlew.bat run
 ```
 
-Build the project with:
+If the Gradle wrapper is not present in your checkout yet, install a compatible Gradle release and run:
 
 ```bash
-./gradlew build
+gradle run
 ```
 
-The generated files are placed in `build/libs/`.
-
-> A Gradle wrapper will be committed before the first public developer release so contributors do not need a separate Gradle installation.
+For the full build guide, see [docs/BUILDING.md](docs/BUILDING.md).
 
 ## Controls
 
@@ -77,70 +122,107 @@ The generated files are placed in `build/libs/`.
 | Flashlight | F |
 | Pause | Esc |
 
-Controls are subject to change during development.
+Controls will be finalized during Act 1 development.
 
-## Project structure
+## Repository layout
 
 ```text
-src/main/java/dev/azuremc/deadsignal/
-├── DeadSignalGame.java
-├── game/
-│   ├── GameState.java
-│   └── GameplayState.java
-└── menu/
-    └── MainMenuState.java
+.
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   ├── pull_request_template.md
+│   └── workflows/
+├── docs/
+│   ├── BUILDING.md
+│   └── GAME_DESIGN.md
+├── src/main/java/dev/azuremc/deadsignal/
+│   ├── DeadSignalGame.java
+│   ├── game/
+│   └── menu/
+├── build.gradle
+├── settings.gradle
+├── CONTRIBUTING.md
+├── CHANGELOG.md
+├── LICENSE
+└── README.md
 ```
 
-## Development roadmap
+## Roadmap
 
 ### Milestone 0 — Foundation
 - [x] Java 25 project
 - [x] jMonkeyEngine integration
-- [x] Main menu shell
+- [x] Professional menu shell
 - [x] Prototype gameplay state
+- [x] CI build workflow
+- [x] Contribution and issue templates
+- [x] Build/design documentation
 
-### Milestone 1 — Vertical slice
-- [ ] First factory room
+### Milestone 1 — Act 1 / Vertical Slice
+- [ ] First factory environment
 - [ ] First-person controller
 - [ ] Flashlight
-- [ ] Interactable doors
-- [ ] First GrabPack prototype
-- [ ] First power puzzle
-- [ ] Save/checkpoint system
+- [ ] Doors and physical interactions
+- [ ] GrabPack prototype
+- [ ] Power-routing puzzle
+- [ ] Project: Echo story sequence
+- [ ] Morrow introduction
+- [ ] First chase
+- [ ] Checkpoint/save flow
+- [ ] Act 1 playable from start to finish
 
-### Milestone 2 — Horror systems
-- [ ] Morrow AI
-- [ ] Stalking behaviour
-- [ ] Chase sequence
-- [ ] Audio system
+### Milestone 2 — Production Systems
+- [ ] Expanded Morrow AI
+- [ ] Advanced stalking behaviour
+- [ ] Chase framework
+- [ ] Audio manager and positional ambience
 - [ ] Environmental events
 - [ ] Cutscene framework
+- [ ] Settings/accessibility
+- [ ] Performance profiling
 
-### Milestone 3 — Public demo
-- [ ] Complete opening sequence
-- [ ] Sector 07 environment
-- [ ] First major encounter
-- [ ] Optimisation
-- [ ] Accessibility/options
-- [ ] Windows/Linux builds
-- [ ] itch.io release
+### Milestone 3 — Public Demo
+- [ ] Content polish
+- [ ] QA pass
+- [ ] Windows build
+- [ ] Linux build
+- [ ] Release notes
+- [ ] itch.io store page
+- [ ] First public demo
 
-## Fan project notice
+## Development workflow
 
-This is an unofficial fan project and is not affiliated with or endorsed by Mob Entertainment or the official Poppy Playtime team.
+The repository is intended to stay buildable throughout development.
 
-The project will use original fan-made code, environments, characters, story elements, audio, and other assets where possible. Third-party assets will only be included when their licenses permit redistribution.
+Pull requests should:
 
-The final distribution page will clearly identify the project as an unofficial fan game.
+- Keep changes focused.
+- Use Java 25.
+- Avoid committing generated build output.
+- Include testing notes.
+- Avoid unlicensed or ripped assets.
+- Update documentation when player-facing behaviour changes.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Fan-project notice
+
+**Dead Signal is unofficial.** It is not affiliated with or endorsed by Mob Entertainment or the official Poppy Playtime team.
+
+The repository is for an original fan-made project. Official trademarks, characters, artwork, audio, models, textures, story material, and other copyrighted content remain the property of their respective owners.
+
+Any third-party asset included in a future release must have a license that permits the intended distribution, or explicit permission must be obtained.
+
+The final itch.io page will clearly identify the game as an unofficial fan project.
 
 ## Credits
 
 **AzureMC Projects** — Development
 
-Built with **jMonkeyEngine** and Java.
+Built with **Java** and **jMonkeyEngine**.
 
-jMonkeyEngine is licensed under its own open-source license. See the engine project for licensing information.
+jMonkeyEngine is an independent open-source project with its own licensing terms.
 
-## Contributing
+---
 
-Issues and pull requests are welcome during development. Please keep contributions focused on the current milestone and avoid adding copyrighted assets without permission or a compatible redistribution license.
+**Development status:** early prototype. Expect incomplete systems, placeholder visuals, changing controls, and breaking changes while Act 1 is being built.
