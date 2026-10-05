@@ -11,6 +11,7 @@ import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
 import com.jme3.scene.Geometry;
 import com.jme3.scene.Node;
+import com.jme3.scene.Spatial;
 import com.jme3.scene.shape.Quad;
 import dev.azuremc.deadsignal.DeadSignalGame;
 
@@ -42,6 +43,9 @@ public final class MainMenuState extends BaseAppState {
     @Override
     protected void initialize(Application app) {
         guiNode = new Node("MainMenu");
+        // GUI elements are updated every frame (hover colors/text), so they must
+        // not participate in the normal scene-graph culling update pass.
+        guiNode.setCullHint(Spatial.CullHint.Never);
         app.getGuiViewPort().attachScene(guiNode);
 
         var input = app.getInputManager();
