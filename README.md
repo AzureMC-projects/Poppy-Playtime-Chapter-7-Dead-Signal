@@ -1,24 +1,29 @@
 # Poppy Playtime: Chapter 7 — Dead Signal
 
-> **An original, non-commercial fan-made horror game inspired by the Poppy Playtime universe.**
+> **Act 1 — The Signal**
+
+An original, non-commercial fan-made horror game inspired by the Poppy Playtime universe.
 
 <p align="center">
   <strong>DEAD SIGNAL</strong><br>
   <em>Sector 07 is listening.</em>
 </p>
 
-## Project status
+## Release status
+
+**Act 1 — The Signal: v1.0.0**
+
+This is the first complete public release of **Dead Signal**. It is built with **Godot 4.7.2 stable** and is intended to be a self-contained Act 1 experience. Godot 4.7.2 is an official stable release dated August 18, 2026. citeturn0search0turn0search2
 
 | Area | Status |
 |---|---|
-| Engine | jMonkeyEngine 3.9.0-stable |
-| Runtime | Java 25 |
-| Build | Gradle |
-| Current phase | Pre-production / playable prototype |
-| Target release | itch.io |
-| Platform target | Windows + Linux |
-
-jMonkeyEngine 3.9.0-stable is the selected engine baseline for this project, with Java 25 as the project runtime.
+| Game version | **1.0.0** |
+| Release | **Act 1 — The Signal** |
+| Engine | **Godot 4.7.2** |
+| Scripting | **GDScript** |
+| Platforms | Windows + Linux |
+| Distribution | itch.io |
+| Status | **Release** |
 
 ## The game
 
@@ -34,83 +39,34 @@ Something else is receiving the signal.
 
 Explore. Restore power. Follow the signal. Do not let it find you.
 
-## Design goals
-
-Dead Signal is being built around:
-
-- First-person exploration
-- Physical environmental puzzles
-- GrabPack-style interaction mechanics with original implementations
-- Industrial machinery and power systems
-- Slow-burn psychological horror
-- Stalking and chase encounters
-- Environmental storytelling
-- Strong audio and lighting direction
-- Checkpoints and reliable save progression
-- A polished, itch.io-ready player experience
-
-The project takes inspiration from the pacing, puzzle language, presentation, and menu conventions of modern mascot-horror games while using original code, environments, characters, story beats, audio, and other assets.
-
 ## Act 1 — The Signal
 
-Act 1 is the first complete gameplay target.
+The v1.0.0 Act 1 release contains the complete first chapter of the fan-made story:
 
-**Planned sequence:**
+1. Enter Sector 07.
+2. Follow the mysterious transmission.
+3. Discover the GrabPack station.
+4. Restore power through the routing system.
+5. Unlock the security door.
+6. Investigate Project: Echo.
+7. Encounter Morrow.
+8. Reach the maintenance access.
+9. Survive the chase.
+10. Discover that the signal goes deeper.
 
-1. Arrival at Sector 07.
-2. Establish the abandoned signal-processing facility.
-3. Introduce movement, camera, and flashlight.
-4. Discover the first interactive power system.
-5. Introduce the GrabPack prototype.
-6. Solve the first power-routing puzzle.
-7. Discover evidence connected to Project: Echo.
-8. Trigger the first unmistakable Morrow encounter.
-9. Escape into the deeper facility.
-10. End on a strong story cliffhanger.
+## Features
 
-Act 1 is not considered complete until these pieces work together as one continuous playable sequence.
-
-See [docs/GAME_DESIGN.md](docs/GAME_DESIGN.md) for the design target.
-
-## Play the game
-
-### Public releases
-
-The first public itch.io build will be linked here when it is ready.
-
-**Recommended player workflow:**
-
-1. Download the latest platform build.
-2. Extract the ZIP.
-3. Launch the included game executable.
-4. Play using the controls shown in-game/readme.
-5. Report bugs through GitHub or the itch.io community page.
-
-**Do not download the source repository if you only want to play the game.**
-
-### Development build
-
-Requires **JDK 25**.
-
-Linux/macOS:
-
-```bash
-./gradlew run
-```
-
-Windows:
-
-```powershell
-gradlew.bat run
-```
-
-If the Gradle wrapper is not present in your checkout yet, install a compatible Gradle release and run:
-
-```bash
-gradle run
-```
-
-For the full build guide, see [docs/BUILDING.md](docs/BUILDING.md).
+- First-person 3D horror exploration
+- Original Sector 07 environment
+- Flashlight system
+- Environmental interaction
+- GrabPack-inspired original mechanics
+- Multi-step power-routing puzzle
+- Project: Echo story sequence
+- Morrow stalking/chase encounter
+- Atmospheric lighting and industrial spaces
+- Act 1 beginning-to-end progression
+- Windows and Linux release targets
 
 ## Controls
 
@@ -118,29 +74,27 @@ For the full build guide, see [docs/BUILDING.md](docs/BUILDING.md).
 |---|---|
 | Move | W A S D |
 | Look | Mouse |
-| Jump | Space |
+| Interact | E |
 | Flashlight | F |
-| Pause | Esc |
+| Pause / Menu | Esc |
 
-Controls will be finalized during Act 1 development.
+## Play
+
+The official playable build will be distributed through the project's itch.io page.
+
+**For players:** download the release build, extract it, and launch the included game executable.
+
+**For developers:** open the repository as a Godot project with **Godot 4.7.2 stable**. No external language runtime or build system is required for the game project itself. citeturn0search0
 
 ## Repository layout
 
 ```text
 .
-├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   ├── pull_request_template.md
-│   └── workflows/
 ├── docs/
-│   ├── BUILDING.md
-│   └── GAME_DESIGN.md
-├── src/main/java/dev/azuremc/deadsignal/
-│   ├── DeadSignalGame.java
-│   ├── game/
-│   └── menu/
-├── build.gradle
-├── settings.gradle
+├── scripts/
+│   └── main.gd
+├── Main.tscn
+├── project.godot
 ├── CONTRIBUTING.md
 ├── CHANGELOG.md
 ├── LICENSE
@@ -149,80 +103,43 @@ Controls will be finalized during Act 1 development.
 
 ## Roadmap
 
-### Milestone 0 — Foundation
-- [x] Java 25 project
-- [x] jMonkeyEngine integration
-- [x] Professional menu shell
-- [x] Prototype gameplay state
-- [x] CI build workflow
-- [x] Contribution and issue templates
-- [x] Build/design documentation
-
-### Milestone 1 — Act 1 / Vertical Slice
-- [x] First factory environment (prototype)
-- [x] First-person controller (prototype)
+### v1.0.0 — Act 1: The Signal
+- [x] Complete Act 1 gameplay path
+- [x] First-person movement and look
 - [x] Flashlight
-- [x] Doors and physical interactions (prototype)
-- [x] GrabPack prototype
+- [x] GrabPack-inspired interaction
 - [x] Power-routing puzzle
-- [x] Project: Echo story sequence
-- [x] Morrow introduction
-- [x] First chase
-- [ ] Checkpoint/save flow
-- [x] Act 1 playable from start to finish (prototype)
+- [x] Project: Echo sequence
+- [x] Morrow reveal
+- [x] Morrow chase
+- [x] Act 1 ending
 
-### Milestone 2 — Production Systems
+### Future updates
 - [ ] Expanded Morrow AI
-- [ ] Advanced stalking behaviour
-- [ ] Chase framework
-- [ ] Audio manager and positional ambience
-- [ ] Environmental events
-- [ ] Cutscene framework
-- [ ] Settings/accessibility
-- [ ] Performance profiling
-
-### Milestone 3 — Public Demo
-- [ ] Content polish
-- [ ] QA pass
-- [ ] Windows build
-- [ ] Linux build
-- [ ] Release notes
-- [ ] itch.io store page
-- [ ] First public demo
-
-## Development workflow
-
-The repository is intended to stay buildable throughout development.
-
-Pull requests should:
-
-- Keep changes focused.
-- Use Java 25.
-- Avoid committing generated build output.
-- Include testing notes.
-- Avoid unlicensed or ripped assets.
-- Update documentation when player-facing behaviour changes.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+- [ ] More advanced stalking behaviour
+- [ ] Additional factory sectors
+- [ ] More puzzles and GrabPack abilities
+- [ ] Expanded audio and voice direction
+- [ ] Cutscene system
+- [ ] Save/checkpoint improvements
+- [ ] Accessibility and settings
+- [ ] Act 2
 
 ## Fan-project notice
 
 **Dead Signal is unofficial.** It is not affiliated with or endorsed by Mob Entertainment or the official Poppy Playtime team.
 
-The repository is for an original fan-made project. Official trademarks, characters, artwork, audio, models, textures, story material, and other copyrighted content remain the property of their respective owners.
+This project uses original code, original environments, original characters, original story material, and original assets wherever possible. Official trademarks and copyrighted material remain the property of their respective owners.
 
-Any third-party asset included in a future release must have a license that permits the intended distribution, or explicit permission must be obtained.
-
-The final itch.io page will clearly identify the game as an unofficial fan project.
+This is a non-commercial fan-made project.
 
 ## Credits
 
 **AzureMC Projects** — Development
 
-Built with **Java** and **jMonkeyEngine**.
-
-jMonkeyEngine is an independent open-source project with its own licensing terms.
+**Godot Engine** — Game engine
 
 ---
 
-**Development status:** early prototype. Expect incomplete systems, placeholder visuals, changing controls, and breaking changes while Act 1 is being built.
+**Dead Signal — Act 1: The Signal**  
+**Version 1.0.0**
