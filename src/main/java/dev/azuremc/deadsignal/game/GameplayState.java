@@ -74,7 +74,7 @@ public final class GameplayState extends BaseAppState {
         input.addListener(inputListener, INTERACT, FLASHLIGHT, ESCAPE);
 
         world = new Node("Act1World");
-        app.getRootNode().attachChild(world);
+        ((SimpleApplication) app).getRootNode().attachChild(world);
 
         buildEnvironment(app);
         setupPlayer((SimpleApplication) app);
@@ -150,7 +150,7 @@ public final class GameplayState extends BaseAppState {
     }
 
     private void setupHud(Application app) {
-        var gui = app.getGuiViewPort().getGuiRoot();
+        var gui = ((SimpleApplication) app).getGuiNode();
         var font = app.getAssetManager().loadFont("Interface/Fonts/Default.fnt");
 
         title = hudText(font, "ACT 1  //  THE SIGNAL", 18, new ColorRGBA(0.75f, 0.78f, 0.78f, 0.9f), 30, 690);
@@ -363,12 +363,22 @@ public final class GameplayState extends BaseAppState {
     }
 
     @Override
+    protected void onEnable() {
+        ((SimpleApplication) getApplication()).getFlyByCamera().setEnabled(true);
+    }
+
+    @Override
+    protected void onDisable() {
+        ((SimpleApplication) getApplication()).getFlyByCamera().setEnabled(false);
+    }
+
+    @Override
     protected void cleanup(Application app) {
         app.getInputManager().deleteMapping(INTERACT);
         app.getInputManager().deleteMapping(FLASHLIGHT);
         app.getInputManager().deleteMapping(ESCAPE);
         app.getInputManager().removeListener(inputListener);
-        app.getFlyByCamera().setEnabled(false);
+        ((SimpleApplication) app).getFlyByCamera().setEnabled(false);
 
         if (world != null) world.removeFromParent();
 
@@ -376,8 +386,6 @@ public final class GameplayState extends BaseAppState {
         if (objective != null) objective.removeFromParent();
         if (prompt != null) prompt.removeFromParent();
         if (title != null) title.removeFromParent();
-        gui.removeChild(objective);
-        gui.removeChild(prompt);
-        gui.removeChild(title);
+        // Text elements were already detached above.
     }
 }
