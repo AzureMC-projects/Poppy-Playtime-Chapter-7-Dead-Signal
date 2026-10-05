@@ -55,7 +55,7 @@ public final class GameplayState extends BaseAppState {
         switch (name) {
             case INTERACT -> interact();
             case FLASHLIGHT -> toggleFlashlight();
-            case ESCAPE -> game.returnToMenu();
+            case ESCAPE -> ((DeadSignalGame) getApplication()).returnToMenu();
             default -> { }
         }
     };
