@@ -382,7 +382,7 @@ public final class GameplayState extends BaseAppState {
 
         if (world != null) world.removeFromParent();
 
-        var gui = app.getGuiViewPort().getGuiRoot();
+        var gui = ((SimpleApplication) app).getGuiNode();
         if (objective != null) objective.removeFromParent();
         if (prompt != null) prompt.removeFromParent();
         if (title != null) title.removeFromParent();
