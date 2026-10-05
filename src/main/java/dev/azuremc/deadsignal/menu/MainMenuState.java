@@ -148,6 +148,16 @@ public final class MainMenuState extends BaseAppState {
     }
 
     @Override
+    protected void onEnable() {
+        getApplication().getInputManager().setCursorVisible(true);
+    }
+
+    @Override
+    protected void onDisable() {
+        getApplication().getInputManager().setCursorVisible(false);
+    }
+
+    @Override
     protected void cleanup(Application app) {
         app.getInputManager().deleteMapping(SELECT);
         app.getInputManager().removeListener(mouseListener);
