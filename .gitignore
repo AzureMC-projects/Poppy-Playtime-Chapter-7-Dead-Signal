@@ -1,8 +1,10 @@
-.gradle/
+.godot/
+export/
 build/
+dist/
 out/
-.idea/
 .vscode/
-*.iml
+.idea/
+*.tmp
 .DS_Store
 Thumbs.db
