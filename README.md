@@ -18,7 +18,7 @@
 | Target release | itch.io |
 | Platform target | Windows + Linux |
 
-jMonkeyEngine 3.9.0-stable is a production-ready engine release, and the current jME 3.9 SDK is Java 25-ready. citeturn0search5turn0search6
+jMonkeyEngine 3.9.0-stable is the selected engine baseline for this project, with Java 25 as the project runtime.
 
 ## The game
 
